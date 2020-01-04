@@ -15,11 +15,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String name;
-    private String email;
+    private String firstName;
+    private String lastName;
+    private int defaultMediaType;
 
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 }
