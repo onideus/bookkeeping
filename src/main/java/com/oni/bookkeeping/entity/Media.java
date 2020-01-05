@@ -8,18 +8,22 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@Entity(name = "MediaSubType")
-@Table(name = "media_sub_type")
-@Data
-@ToString
+@Entity(name = "Media")
+@Table(name = "media")
 @AllArgsConstructor
 @NoArgsConstructor
-public class MediaSubType {
+@ToString
+@Data
+public class Media {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String mediaSubType;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("mediaSubTypes")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "mediaSubTypes"})
     private MediaType mediaType;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "mediaType"})
+    private MediaSubType mediaSubType;
+    private String mediaTitle;
+    private byte[] mediaImage;
 }
