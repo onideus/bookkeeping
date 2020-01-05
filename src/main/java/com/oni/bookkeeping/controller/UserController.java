@@ -1,6 +1,8 @@
 package com.oni.bookkeeping.controller;
 
+import com.oni.bookkeeping.entity.MediaType;
 import com.oni.bookkeeping.entity.User;
+import com.oni.bookkeeping.repository.MediaTypeRepository;
 import com.oni.bookkeeping.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +15,15 @@ import java.util.List;
 @AllArgsConstructor
 public class UserController {
     private final UserRepository userRepository;
+    private final MediaTypeRepository mediaTypeRepository;
 
     @GetMapping("/users")
     public List<User> getUsers() {
         return (List<User>) userRepository.findAll();
     }
+
+    @GetMapping("/mediatypes")
+    public List<MediaType> getMediaTypes() { return (List<MediaType>) mediaTypeRepository.findAll(); }
 
     @PostMapping("/users")
     void addUser(@RequestBody User user) {
