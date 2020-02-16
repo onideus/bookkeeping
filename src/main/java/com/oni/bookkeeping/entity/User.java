@@ -3,12 +3,11 @@ package com.oni.bookkeeping.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
-@Entity(name = "user_table")
+@Entity(name = "User")
+@Table(name = "user_table")
 @Data
 @NoArgsConstructor
 public class User {
@@ -18,6 +17,12 @@ public class User {
     private String firstName;
     private String lastName;
     private int defaultMediaType;
+    @OneToMany(
+            mappedBy = "user",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<CustomerMediaTracker> customerMediaTrackers;
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
