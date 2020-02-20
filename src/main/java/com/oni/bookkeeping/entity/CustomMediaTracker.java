@@ -10,7 +10,7 @@ import java.time.OffsetDateTime;
 @Table(name = "custom_media_tracker")
 @Data
 @NoArgsConstructor
-public class CustomerMediaTracker {
+public class CustomMediaTracker {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

@@ -22,7 +22,7 @@ public class User {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<CustomerMediaTracker> customerMediaTrackers;
+    private List<CustomMediaTracker> customMediaTrackers;
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
