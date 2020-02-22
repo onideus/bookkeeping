@@ -1,5 +1,6 @@
 package com.oni.bookkeeping.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,8 +23,8 @@ public class User {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+    @JsonIgnoreProperties("user")
     private List<CustomMediaTracker> customMediaTrackers;
-
     public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;

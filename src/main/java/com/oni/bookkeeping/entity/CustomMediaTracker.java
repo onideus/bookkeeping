@@ -1,10 +1,12 @@
 package com.oni.bookkeeping.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @Entity(name = "CustomMediaTracker")
 @Table(name = "custom_media_tracker")
@@ -16,7 +18,16 @@ public class CustomMediaTracker {
     private long id;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonIgnoreProperties
     private User user;
+    @ManyToMany
+    @JoinTable(
+            name = "media_completed_tracker_join",
+            joinColumns = @JoinColumn(name = "custom_tracker_id"),
+            inverseJoinColumns = @JoinColumn(name = "completed_media_id")
+    )
+    @JsonIgnoreProperties("customMediaTracker")
+    private List<MediaCompleted> mediaCompletedList;
     private String trackerName;
     private int goal;
     private OffsetDateTime startDate;
