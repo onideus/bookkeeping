@@ -20,11 +20,12 @@ public class MediaType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String mediaType;
+    private String mediaTypeName;
     @OneToMany(
             mappedBy = "mediaType",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
     )
     @JsonIgnoreProperties("mediaType")
     private List<MediaSubType> mediaSubTypes = new ArrayList<>();

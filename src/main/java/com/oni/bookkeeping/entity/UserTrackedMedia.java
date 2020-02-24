@@ -21,8 +21,9 @@ public class UserTrackedMedia {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "media_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("hibernateLazyInitializer")
     private Media media;
     private boolean wishlist;
     private boolean owned;

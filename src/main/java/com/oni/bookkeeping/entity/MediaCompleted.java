@@ -16,15 +16,16 @@ public class MediaCompleted {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    @JsonIgnoreProperties
+    @JsonIgnoreProperties("hibernateLazyInitializer")
     private User user;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "media_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("hibernateLazyInitializer")
     private Media media;
-    @ManyToMany(mappedBy = "mediaCompletedList")
-    @JsonIgnoreProperties("mediaCompleted")
+    @ManyToMany(mappedBy = "mediaCompletedList", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"mediaCompletedList", "user", "media", "hibernateLazyInitializer"})
     private List<CustomMediaTracker> customMediaTrackerList;
     private OffsetDateTime mediaCompletedDate;
 }
