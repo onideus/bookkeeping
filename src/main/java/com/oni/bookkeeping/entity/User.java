@@ -17,7 +17,8 @@ public class User {
     private long id;
     private String firstName;
     private String lastName;
-    private int defaultMediaType;
+    @OneToOne(fetch = FetchType.LAZY)
+    private MediaType defaultMediaType;
     @OneToMany(
             mappedBy = "user",
             cascade = CascadeType.ALL,

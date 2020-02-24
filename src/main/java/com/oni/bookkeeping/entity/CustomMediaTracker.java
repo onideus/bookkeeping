@@ -26,7 +26,7 @@ public class CustomMediaTracker {
             joinColumns = @JoinColumn(name = "custom_tracker_id"),
             inverseJoinColumns = @JoinColumn(name = "completed_media_id")
     )
-    @JsonIgnoreProperties({"customMediaTrackerList", "user", "media", "hibernateLazyInitializer"})
+    @JsonIgnoreProperties({"customMediaTrackers", "user", "media", "hibernateLazyInitializer"})
     private List<MediaCompleted> mediaCompletedList;
     private String trackerName;
     private int goal;

@@ -26,6 +26,6 @@ public class MediaCompleted {
     private Media media;
     @ManyToMany(mappedBy = "mediaCompletedList", fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"mediaCompletedList", "user", "media", "hibernateLazyInitializer"})
-    private List<CustomMediaTracker> customMediaTrackerList;
+    private List<CustomMediaTracker> customMediaTrackers;
     private OffsetDateTime mediaCompletedDate;
 }
