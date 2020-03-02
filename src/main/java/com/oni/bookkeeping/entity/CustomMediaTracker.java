@@ -32,4 +32,16 @@ public class CustomMediaTracker {
     private int goal;
     private OffsetDateTime startDate;
     private OffsetDateTime endDate;
+
+    @Override
+    public String toString() {
+        return "CustomMediaTracker{" +
+                "id=" + id +
+                ", mediaCompletedList=" + mediaCompletedList +
+                ", trackerName='" + trackerName + '\'' +
+                ", goal=" + goal +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
+    }
 }
