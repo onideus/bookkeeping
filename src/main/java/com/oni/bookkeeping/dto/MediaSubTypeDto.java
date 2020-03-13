@@ -11,11 +11,9 @@ import lombok.NoArgsConstructor;
 public class MediaSubTypeDto {
     private long id;
     private String mediaSubTypeName;
-    private MediaTypeDto mediaTypeDto;
 
     public MediaSubTypeDto(MediaSubType mediaSubType) {
         this.id = mediaSubType.getId();
         this.mediaSubTypeName = mediaSubType.getMediaSubTypeName();
-        this.mediaTypeDto = new MediaTypeDto(mediaSubType.getMediaType());
     }
 }
