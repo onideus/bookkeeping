@@ -137,3 +137,6 @@ Thumbs.db
 /target/maven-archiver/pom.properties
 /target/surefire-reports/TEST-com.oni.bookkeeping.BookkeepingApplicationTests.xml
 /target/classes/*
+
+## NPM
+/angularclient/node_modules/
