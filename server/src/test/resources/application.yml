@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+    url: jdbc:postgresql://${embedded.postgresql.host}:${embedded.postgresql.port}/bookkeeping
+    username: ${embedded.postgresql.user}
+    password: ${embedded.postgresql.password}
