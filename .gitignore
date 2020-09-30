@@ -140,3 +140,4 @@ Thumbs.db
 
 ## NPM
 /angularclient/node_modules/
+/client/target/
