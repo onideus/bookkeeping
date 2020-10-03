@@ -1,2 +1,0 @@
-ALTER TABLE user_table
-RENAME COLUMN default_media_type TO default_media_type_id;

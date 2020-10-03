@@ -13,6 +13,8 @@
         <relativePath />
     </parent>
     <modules>
-        <module>server</module>
+        <module>bookkeeping-server</module>
+        <module>bookkeeping-web-client</module>
+        <module>bookkeeping-mobile-client</module>
     </modules>
 </project>

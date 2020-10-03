@@ -1,0 +1,20 @@
+server:
+  port: 8070
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://192.168.1.102:5432/bookkeeping
+    username: bookkeeper
+    password: 893e036e-b2bb-4104-b317-4f9ab6e0b44a
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
