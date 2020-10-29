@@ -12,8 +12,8 @@
   <parent>
     <groupId>com.oni.bookkeeping</groupId>
     <artifactId>bookkeeping-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../</relativePath>
+    <version>${revision}</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <build>
